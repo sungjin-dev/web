@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form(양식) 태그</title>
+</head>
+<body>
+    <!-- form(양식) 태그  input - 인라인                   데이터가 날아가는 방식 (post or get) -->
+    <form action="http://192.168.0.105/newmember/sign-up"
+         method="post"
+         name="signupform">
+        <input type = "text" placeholder="회원 ID입력 : ">
+        <br>
+        <input type = "text" placeholder="회원 NAME입력 : ">
+        <br>
+        <input type="password" placeholder="회원 PW입력 : ">
+        <br>
+        <input type = "text" placeholder="회원 PHONE입력 : ">
+        <br>
+        <input type = "email" placeholder="회원 EMAIL입력 : ">
+        <br>
+        <input type = "number" value = "10" min="1" max="20" placeholder="회원 AGE입력 : ">
+        <br>
+        좋아하는 색상:<input type="color" value="#1B51A8">
+        <!-- 좋아하는 색상:<input type="color" value="#FF0000"  FF면 최대값이 나옴> -->
+        <br> 
+        생일:<input type="date">
+        <br> 
+        공부:<input type = "datetime-local">
+        <!-- RGB : 255 0 0 --   openCV에서는 BGR> -->
+        <br> 
+        당신국가:
+        <select>
+            <option>대한민국</option>
+            <option>미국</option>
+            <option>일본</option>
+            <option>중국</option>
+            <option>영국</option>
+        </select>
+        <br>
+        취미: 축구:<input type="checkbox"> 농구:<input type="checkbox"> 야구 <input type="checkbox"> 배구 <input type="checkbox">
+        <br>
+        성구분: 남:<input type="radio" name="gender"> 여<input type="radio" name="gender">
+        <br>
+        직업:
+        학생:<input type="radio" name="job">
+        회사원:<input type="radio" name="job">
+        자영업:<input type="radio" name="job">
+        백수:<input type="radio" name="job">
+        은퇴:<input type="radio" name="job">
+        <br>
+        <!-- <button>회원가입</button> -->
+        <!-- <input type = "button" value ="회원가입"> 기능 없는 깡통 버튼-->
+        <input type="submit" value="회원가입"> <input type="reset" value="초기화">
+
+    </form>
+
+    <br><br>
+
+    <form action="http://192.168.0.105/newmember/sign-in"
+         method="post"
+         name="signinform">   
+         <!-- name을 통해서 서버가 어떤 데이터인지 목적을 판단하는 기준을 판단함 꼬리표 -->
+         <input type="text" placeholder="user id">
+         <br>
+         <input type="text" placeholder="user pw">
+         <br>
+         <textarea name="message" rows = "5" cols="10"></textarea>
+         <br>
+         <input type="submit" value="로그인">
+    
+    </form>     
+</body>
+</html>
