@@ -1,0 +1,45 @@
+/* 바깥쪽 margin 안쪽 padding  시계방향으로 */
+/* 최상위는 id로 자식들은 class로  radius는 반지름 기준*/
+/*  margin: 0 auto; 가운데 정렬 */
+#wrap {
+    width: 800px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    margin: 50px auto;
+/*  margin: 0 auto 0 auto; 이거랑 같음 */
+    box-shadow: 3px 3px 3px rgba(200, 200, 200, .5); /* rgba 4번째는 0~1 */
+    /* 첫번째는 가로-음수면 왼쪽으로-, 두번째는 세로(음수면 위로) 3번째는 몽글몽글 */
+    padding: 80px 50px;  /* 생략하면 그대로 복사해서 적용 */
+}
+/* div 후손들 중에서 class 이름이 to */
+/* inheritation 상속됨 to에만 적용해도 a, h2까지 */
+#wrap div.to {
+    font-style: italic;
+    /* margin: 0 0 50px 0   */
+    margin-bottom: 50px;
+}
+
+#wrap div.head {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: double #dadada;
+    padding-bottom: 10px;
+}
+
+#wrap div.body {
+    width: 90%;
+    margin: 30px auto;
+}
+
+#wrap div.body p {
+    margin: 20px 0;
+}
+
+#wrap div.from {
+    font-style: italic;
+    margin-top: 50px;
+    text-align: right;
+}
+

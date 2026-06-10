@@ -1,0 +1,38 @@
+#wrap {
+    width : 800px;
+    border: 1px solid #dadada;
+    padding: 80px 50px;
+    margin: 50px auto;
+    border-radius: 10px ;
+    box-shadow: 3px 3px 3px rgba(200, 200, 200, .5);
+}
+
+#wrap div.to {
+    font-style: italic; 
+    margin-bottom: 50px ;
+}
+
+#wrap div.head {
+    width: 90%;
+    margin:0 auto;
+    text-align: center;
+    border-bottom: double #dadada;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+#wrap div.body {
+    width: 90%;
+    margin:0 auto;
+}
+
+#wrap div.body p {
+    margin: 25px 0;
+}
+
+#wrap div.from {
+    text-align: right;
+    font-style: italic;  
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

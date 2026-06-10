@@ -1,0 +1,25 @@
+/* 
+id 선택자
+id 선택자란, HTML 요소의 id 속성값을 기준으로 
+스타일을 적용하는 선택자 입니다.
+http://hoazzinews.tistory.com/101
+
+HTML 하나의 문서에서 안에서는 id값은 고유해야한다. key값처럼 
+*/
+
+/* div {
+    color:bisque;
+} */
+
+/* 
+#id이름{
+    속성: 속성값;
+}
+*/
+#div01 {
+    color:rgb(83, 83, 180);
+}
+
+#div02 {
+    color:rgb(201, 97, 119);
+}

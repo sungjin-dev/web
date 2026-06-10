@@ -1,0 +1,40 @@
+/* 자손/후손 선택자
+자손/후손 선택자란, 특정 요소 내부에 있는 모든 하위 요소
+들을 선택할 때 사용합니다.
+나홀로 태그는 열고 닫을 수가 없으니까 적용x
+https://hoazzinews.tistory.com/105
+*/
+
+/* 
+기본문법\
+부모선택자 자식선택자 {
+    속성: 속성값;
+}
+*/
+
+/* 후손 선택자 텔포 가능 */
+div p {
+    color:rgb(13, 40, 41);
+}
+/* 자손 선택자 */
+div > p {
+    color:rgb(154, 123, 180);
+}
+
+/* 자손선택자를 이용해서 a요소를 찾아보자 */
+div > section > p > a {
+    text-decoration: none;
+}
+
+/* div를 기준으로 후손 선택자로 변경 */
+
+div a {
+    text-decoration: none;
+}
+div > section a {
+    text-decoration: none;
+}
+
+div a.google {
+    font-size: 1.3em;
+}
