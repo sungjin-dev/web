@@ -1,0 +1,37 @@
+#wrap div.head {
+    width: 90%;
+    margin:20px auto;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+#wrap div.body tr:nth-child(1) {
+    background-color: #dadada;
+    font-weight: bold;
+}
+
+#wrap div.body td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 5px;
+}
+
+#wrap div.body > table {
+    margin:0 auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+#wrap div.foot {
+    width: 90%;
+    margin:0 auto;
+    text-align: right;
+}
+
+#wrap div.foot a {
+    color:aliceblue;
+    background-color: #2bbcf5;
+    border-radius: 3px;
+    font-size: 0.8em;
+    cursor: pointer;
+}

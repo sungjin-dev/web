@@ -1,0 +1,63 @@
+#wrap div.head {
+    width:80%;
+    margin:50px auto 20px;
+    border-bottom: 1px solid #dadada;
+    text-align: center;
+}
+
+#wrap div.body td {
+    border:1px solid #ccc;
+}
+
+#wrap div.body td:nth-child(1) {
+    width : 50px;
+    background-color: #dfdddd;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+#wrap div.body tr:nth-child(1) {
+    height: 50px;
+}
+
+#wrap div.body tr:nth-child(1) td:nth-child(2) div {
+    margin: 10px;
+    padding: 20px;
+    border:1px solid #ccc;
+    border-radius: 3px;
+}
+
+#wrap div.body tr:nth-child(2) td:nth-child(2) div {
+    margin: 10px;
+    padding: 20px;
+    border:1px solid #242424;
+    border-radius: 3px;
+    height: 180px;
+}
+
+#wrap div.body tr:nth-child(2) {
+    height: 250px;
+    margin: 0 auto;
+}
+
+#wrap div.body > table {
+    margin:0 auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+#wrap div.foot {
+    width: 90%;
+    padding:5px;
+    margin:0 auto;
+    text-align: right;
+}
+
+#wrap div.foot a {
+    color:aliceblue;
+    background-color: #2bbcf5;
+    border-radius: 3px;
+    font-size: 0.5em;
+    cursor: pointer;
+    padding:3px;
+}

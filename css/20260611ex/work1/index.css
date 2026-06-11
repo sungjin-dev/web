@@ -1,0 +1,45 @@
+#wrap {
+    margin:50px 50px 50px 300px;
+    padding: 0 80px 0 80px ;
+    border: 1px solid #ccc ;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(200, 200, 200, 0.3);
+}
+
+#layout {
+    float: left;       
+    margin-right: 15px;
+    width: 250px;
+    margin:0 20px;
+    padding:10px;
+    border: 1px solid #ccc ;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(200, 200, 200, 0.3);
+}
+
+#layout p {
+    padding:10px;
+}
+
+#wrap div.to {
+    font-style: italic;
+    margin: 50px auto;
+}
+
+#wrap div.head {
+    text-align: center;
+    border-bottom: double #ccc;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+#wrap div.body p{
+    margin:0 auto;
+    padding: 20px;
+}
+
+#wrap div.from {
+    font-style: italic;
+    margin: 50px auto;
+    text-align: right;
+}
