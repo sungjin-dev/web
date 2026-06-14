@@ -152,12 +152,32 @@
             numbers = [1, 2, 3, 4]
             total = reduce(lambda a, b: a + b, numbers)
             print(total) # 출력: 10
+            <p style="margin-left: 40px;"><b><mark>
+              딕셔너리 안에 딕셔너리가 있을 때, 람다로 특정 값을 어떻게 저격할까?
+            </mark></b></p>
+            <p style="margin-left: 40px;">
+              안에 있는 밸류가 리스트가 아니라 <b>딕셔너리</b>라면 인덱스(숫자)가 아닌 <b>'키(Key) 이름'</b>으로 저격해야 합니다.
+            <br>
+            즉, <b>x[1]</b>로 안쪽 딕셔너리를 꺼낸 뒤, 연달아 <b>['키이름']</b>을 붙여서 <b>x[1]['email']</b> 형태로 연속 타격합니다!
+            </p>
+
+            <pre style="background-color: #1e1e1e; color: #ffffff; padding: 15px; border-radius: 5px; font-family: Consolas, monospace; margin-left: 40px; display: inline-block;">
+            # 🗂️ 딕셔너리 안에 또 딕셔너리(이메일, 비밀번호)가 있는 상황
+            users = {
+            "user_A": {"pw": "1234", "email": "zebra@test.com"},
+            "user_B": {"pw": "5678", "email": "apple@test.com"}
+            }
+
+            # ➡️ x[1]로 밸류(딕셔너리)를 잡고, ['email']로 알맹이를 정확히 저격!
+            result = sorted(users.items(), key=lambda x: x[1]['email'])
+            </pre>  
+
             </pre>
             </li><br>
             </ol>
             <br><br>
-    </main>        
-    <main>
+            </main>        
+            <main>
         <h2>&emsp;
             2. HTML, CSS, JavaScript</h2>
 
@@ -165,40 +185,6 @@
 
         <h3><b>&emsp;한눈에 보는 요약 비교</b></h3>
             
-<table class="tg"><thead>
-  <tr>
-    <th class="tg-jkxh">특징</th>
-    <th class="tg-jkxh">GET(엽서)</th>
-    <th class="tg-jkxh">POST(택배상자)</th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td class="tg-kfkg">목적</td>
-    <td class="tg-x6qq">데이터조회(검색, 읽기)</td>
-    <td class="tg-x6qq">데이터전송(가입,글쓰기,결제)</td>
-  </tr>
-  <tr>
-    <td class="tg-kfkg">데이터위치</td>
-    <td class="tg-x6qq">URL주소창 끝에 노출</td>
-    <td class="tg-x6qq">보이지 않는 Body안에 숨김</td>
-  </tr>
-  <tr>
-    <td class="tg-kfkg">보안</td>
-    <td class="tg-kfkg">X 취약함</td>
-    <td class="tg-kfkg">O 안전함</td>
-  </tr>
-  <tr>
-    <td class="tg-kfkg">길이제한</td>
-    <td class="tg-x6qq">있음(주소창 길이한계)</td>
-    <td class="tg-x6qq">사실상 없음(파일 업로드가능)</td>
-  </tr>
-  <tr>
-    <td class="tg-kfkg">공유/북마크</td>
-    <td class="tg-kfkg">O 가능</td>
-    <td class="tg-kfkg">X 불가능</td>
-  </tr>
-</tbody>
-</table> 
 
     </main>
 
