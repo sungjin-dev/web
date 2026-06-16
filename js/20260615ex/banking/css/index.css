@@ -24,7 +24,7 @@
 /* 인라인 타입을 블럭화  */
 #wrap > div.menu_wrap a {
     display: inline-block;      
-    width: 100px;
+    width: 130px;
     margin: 10px 5px;
     padding: 10px;
     border: 1px solid #dadada;
@@ -70,7 +70,7 @@
 #wrap > div.write_wrap > input,
 #wrap > div.write_wrap > button {
     padding: 20px;
-    margin: 10px 0;
+    margin: 10px;
     border: 1px solid #dadada;
     border-radius: 7px;
     font-size: 1.2em;
@@ -102,6 +102,37 @@
 }
 
 /* 일기 리스트 END*/
+
+/* 계좌 개설  START*/
+
+#wrap > div.new_account_wrap {
+    text-align: center;
+    display: none;
+}
+
+/* 계좌 개설  END*/
+
+/* 입금 START */
+#wrap > div.deposit_wrap {
+    text-align: center;
+    display: none;
+}
+/* 입금 END */
+
+
+/* 출금 START */
+#wrap > div.withdrawal_wrap {
+    text-align: center;
+    display: none;
+}
+/* 출금 END */
+
+/* 계좌 목록 START */
+#wrap > div.acc_list_wrap {
+    text-align: center;
+    display: none;
+}
+/* 계좌 목록 END */
 
 
 

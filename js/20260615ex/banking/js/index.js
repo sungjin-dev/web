@@ -90,6 +90,56 @@ function addEvents() {
         listUpDiaries(); 
         showSelectedView(LIST_VIEW);
     });
+
+    let NewAccMenuBtn = document.querySelector('div.menu_wrap a.new-account');
+    NewAccMenuBtn.addEventListener('click', function(){
+        if (signInedMemberId === '') {
+            alert('Please SIGN IN!');
+            showSelectedView(SIGN_IN_VIEW);
+            return;
+        }
+
+        showSelectedView(NEW_ACCOUNT);
+    
+    });
+
+    let depositMenuBtn = document.querySelector('div.menu_wrap a.deposit');
+    depositMenuBtn.addEventListener('click', function(){
+        if (signInedMemberId === '') {
+            alert('Please SIGN IN!');
+            showSelectedView(SIGN_IN_VIEW);
+            return;
+        }
+
+        showSelectedView(DEPOSIT);
+
+    });
+
+    let withdrawalMenuBtn = document.querySelector('div.menu_wrap a.withdrwal');
+    withdrawalMenuBtn.addEventListener('click', function(){
+        if (signInedMemberId === '') {
+            alert('Please SIGN IN!');
+            showSelectedView(SIGN_IN_VIEW);
+            return;
+        }
+
+        showSelectedView(WITHDRAWAL);
+       
+    });
+
+    let accListlMenuBtn = document.querySelector('div.menu_wrap a.account-list');
+    accListlMenuBtn.addEventListener('click', function(){
+        if (signInedMemberId === '') {
+            alert('Please SIGN IN!');
+            showSelectedView(SIGN_IN_VIEW);
+            return;
+        }
+
+        accListUpDiaries(); 
+        showSelectedView(ACCOUNT_LIST);
+
+    });
+
                         // 단일 element를 찦어냄 
     let signUpBtn = document.querySelector('div.sign_up_wrap input[type="button"]');
     signUpBtn.addEventListener('click', function(){
@@ -102,9 +152,6 @@ function addEvents() {
 
         removeValue([uIdEle, uPwEle, uMailEle])
         
-        uIdEle.value = '';
-        uPwEle.value = '';
-        uMailEle.value = '';
     });
 
     let signInBtn = document.querySelector('div.sign_in_wrap input[type="button"]');
@@ -114,13 +161,13 @@ function addEvents() {
         let uPwEle = document.querySelector('div.sign_in_wrap input[name="u_pw"]');
         
         let isMember = searchMember(uIdEle.value, uPwEle.value);
-
         /* signInedMemberId = isMember? uIdEle.value : '';  */
 
         if (isMember) {
             signInedMemberId = uIdEle.value;
             alert('SIGNIN SUCCESS!!')
 
+            showSelectedView(HOME_VIEW)
             setMenuByStatus(SIGN_IN_STATUS)
 
             showSelectedView()
@@ -134,7 +181,54 @@ function addEvents() {
         removeValue([uIdEle, uPwEle])         
     });
 
+    let newAccBtn = document.querySelector('div.new_account_wrap input[type="button"]');
+    newAccBtn.addEventListener('click', function() {
 
+        let uIdEle = signInedMemberId
+
+        const uuid = crypto.randomUUID();
+
+        let uPwEle = document.querySelector('div.new_account_wrap > input[name="acc_pw"]');
+        let uAccEle = uuid
+
+        addAccount(uIdEle, uAccEle, uPwEle.value, 0, 0);
+
+        removeValue([uPwEle])
+
+        alert(`NEW ACCOUNT REGISTERED! ACC NUM: ${uAccEle}`);
+        showSelectedView(HOME_VIEW) 
+
+      });    
+    
+    let depositBtn = document.querySelector('div.deposit_wrap input[type="button"]');
+    depositBtn.addEventListener('click', function() {
+
+        let accNumEle = document.querySelector('div.deposit_wrap > input[name="dep_accnum"]');
+        let dPoEle = document.querySelector('div.deposit_wrap > input[name="dep_amount"]');
+
+        deposit(accNumEle.value, dPoEle.value);
+
+        removeValue([dPoEle])
+
+        alert(`${dPoEle.value}WON DEPOSITED SUCCESS!`);
+        showSelectedView(HOME_VIEW)
+
+    });
+
+    let withdrawalBtn = document.querySelector('div.withdrawal_wrap input[type="button"]');
+    withdrawalBtn.addEventListener('click', function() {
+
+        let accNumEle = document.querySelector('div.withdrawal_wrap > input[name="wit_accnum"]');
+        let witEle = document.querySelector('div.withdrawal_wrap > input[name="wit_amount"]');
+
+        withdrawal(accNumEle.value, witEle.value);
+
+        removeValue([witEle])
+
+        alert(`${witEle.value}WON WITHDRAWALED SUCCESS!`);  
+        showSelectedView(HOME_VIEW)  
+   
+    });
 
     let writeBtn = document.querySelector('div.write_wrap button');
     writeBtn.addEventListener('click', function(){
@@ -157,7 +251,7 @@ function removeValue(eles) {
     for(let i = 0; i < eles.length; i++) 
 
         eles[i].value = '';
- 
+
 }
 
 function listUpDiaries() {
@@ -178,6 +272,76 @@ function listUpDiaries() {
         // vs append
     }
 
+}
+
+function accListUpDiaries() {
+    console.log('accListUpDiaries() CALLED!')
+
+    accListWrap.textContent='';
+
+    let accountObj = searchAccounts();
+
+    let accountKeys = Object.keys(accountObj);
+   
+    for (let i = 0; i < accountKeys.length; i++) {
+
+        let tpl = document.querySelector('#acc_list_item');
+        let clone = document.importNode(tpl.content, true);
+        let txt = clone.querySelector('div.txt');
+        txt.textContent = accountKeys[i];
+
+        accListWrap.prepend(clone);
+        
+    }
+
+}
+
+function deposit(accnum, amount) {
+
+    console.log('deposit() CALLED!');
+    console.log('계좌번호:', accnum);
+    console.log('금액:', amount);
+    console.log(' ID:', signInedMemberId);
+
+    let accountObj = bankDB.get(signInedMemberId);
+
+     let account = accountObj[accnum];
+
+    if (account) {
+
+        account.deposit += amount 
+        account.balance += amount  
+            
+        console.log('DEPOSIT COMPLETE!');
+        console.log('bankDB', bankDB);
+        return;
+    }    
+
+    console.log('NO ACCOUNT!');   
+}
+
+function withdrawal(accnum, amount) {
+
+    console.log('withdrawal() CALLED!');
+    console.log('계좌번호:', accnum);
+    console.log('금액:', amount);
+    console.log(' ID:', signInedMemberId);
+ 
+    let accountObj = bankDB.get(signInedMemberId);
+
+    let account = accountObj[accnum];
+
+    if (account) {
+ 
+        account.withdrawal -= amount 
+        account.balance -= amount  
+            
+        console.log('WITHDRAWAL COMPLETE!');
+        console.log('bankDB', bankDB);
+        return;
+    }    
+
+    console.log('NO ACCOUNT!');     
 }
 
 /* 

@@ -22,7 +22,7 @@
 
         <!-- 제목 -->
          <div class="title_wrap">
-            OnLine Diary
+            OnLine Diary & Banking
          </div>
 
          <!-- 메뉴 -->
@@ -33,6 +33,10 @@
             <a class="delete" href="#none">Delete</a>
             <a class="write" href="#none">Write</a>
             <a class="list" href="#none">List</a>
+            <a class="new-account" href="#none">NEW ACCOUNT</a>
+            <a class="deposit" href="#none">DEPOSIT</a>
+            <a class="withdrwal" href="#none">WITHDRAWAL</a>
+            <a class="account-list" href="#none">ACC LIST</a>
           </div>
 
           <!-- 회원 가입 페이지 -->
@@ -66,6 +70,38 @@
                 list...
           </div>
 
+          <!-- 계좌 개설 -->
+           <div class="new_account_wrap">
+                <input class="basic_input" type="password" name="acc_pw" placeholder="INPUT ACC PW!!">
+                <br>
+                <input class="basic_button" type="button" value="NEW ACC">
+          </div>
+          <!-- 입금 -->
+           <div class="deposit_wrap">
+                <input class="basic_input" type="text" name="dep_accnum" placeholder="INPUT ACC NUM!!">
+                <br>
+                <input class="basic_input" type="password" name="acc_pw" placeholder="INPUT ACC PW!!">
+                <br>
+                 <input class="basic_input" type="text" name="dep_amount" placeholder="INPUT AMOUNT!">
+                <br>
+                <input class="basic_button" type="button" value="DEPOSIT">
+          </div>
+          <!-- 출금 -->
+           <div class="withdrawal_wrap">
+                <input class="basic_input" type="text" name="wit_accnum" placeholder="INPUT ACC NUM!!">
+                <br>       
+                <input class="basic_input" type="password" name="acc_pw" placeholder="INPUT ACC PW!!">
+                <br>
+                 <input class="basic_input" type="text" name="wit_amount" placeholder="INPUT AMOUNT!">
+                <br>
+                <input class="basic_button" type="button" value="WITHDRAWAL">
+          </div>
+          <!-- 계좌 목록 -->
+           <div class="acc_list_wrap">
+                list...
+          </div>
+
+
     </div>
     
 </body>
@@ -79,6 +115,13 @@
 
       </div>
 </template>  
+
+<template id = "acc_list_item">
+      <div class="txt">
+
+      </div>
+</template>  
+
 
 
 
