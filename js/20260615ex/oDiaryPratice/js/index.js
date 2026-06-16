@@ -3,10 +3,11 @@
 // DOMContentLoaded 렌더링 다 한 시점 loaded 완료 그 html내용에 관한 이벤트 들을 준비
 // loaded 완료된 시점에 콜백함수 어차피 렌더링 안 되어있는데 함수 기능 활용 당연히 X
 
+                                             //콜백함수
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOCUMENT READY')
 
-    init();  
+    init();   
 
 });
 

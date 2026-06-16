@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
 
-    <script src="./js/viewChange.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/viewChange.js"></script>
+    <script src="./js/menuChange.js"></script>
     <script src="./js/db.js"></script>
-
+    <script src="./js/dumy.js"></script>
+    <script src="./js/session.js"></script>
+    <script src="./js/util.js"></script>
+ 
 </head>
 <body>
 
@@ -18,7 +22,7 @@
 
         <!-- 제목 -->
          <div class="title_wrap">
-            OnLine Diary & Banking
+            OnLine Diary
          </div>
 
          <!-- 메뉴 -->
@@ -26,13 +30,9 @@
             <a class="sign-up" href="#none">Sign-up</a>
             <a class="sign-in" href="#none">Sign-in</a>
             <a class="sign-out" href="#none">Sign-out</a>
+            <a class="delete" href="#none">Delete</a>
             <a class="write" href="#none">Write</a>
             <a class="list" href="#none">List</a>
-            <a class="new-account" href="#none">NEW-ACCOUNT</a>
-            <a class="deposit" href="#none">DEPOSIT</a>
-            <a class="withdrawal" href="#none">WITHDRAWAL</a>
-            <a class="account-list" href="#none">ACCOUNT-LIST</a>
-
           </div>
 
           <!-- 회원 가입 페이지 -->
@@ -66,30 +66,21 @@
                 list...
           </div>
 
-          <!-- 계좌 개설  -->
-          <div class="new_account_wrap">
-                <input class="basic_input" type="password" name="acc_pw" placeholder="INPUT USER ACC PW!!">
-                <br>
-                <input class="basic_button" type="button" value="NEW ACC">
-          </div>
-
-          <!-- 입금  -->
-                <input class="basic_input" type="password" name="acc_pw" placeholder="INPUT USER ACC PW!!">
-                <br>
-                <input class="basic_input" type="password" name="dep_amount" placeholder="INPUT AMOUNT!!">
-                <br>
-                <input class="basic_button" type="button" value="DEPOSIT">
-          <!-- 출금  -->
-                <input class="basic_input" type="password" name="acc_pw" placeholder="INPUT USER ACC PW!!">
-                <br>
-                <input class="basic_input" type="password" name="wit_amount" placeholder="INPUT AMOUNT!!">
-                <br>
-                <input class="basic_button" type="button" value="WITHDRAWAL">
-
-          <!-- 계좌 목록  -->
-
-
     </div>
     
 </body>
 </html>
+<!-- 브라우저가 즉시 렌더링하지 않는 HTML조각을 보관하는 컨테이너
+나중에 javaScript로 할 때 복제(clone)해서 DOM에 삽입 -->
+
+
+<template id = "list_item">
+      <div class="txt">
+
+      </div>
+</template>  
+
+
+
+
+
