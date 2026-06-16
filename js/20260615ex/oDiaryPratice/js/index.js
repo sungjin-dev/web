@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+
 // 깔끔하게 밑에다가 빼기
 
 function init() {
