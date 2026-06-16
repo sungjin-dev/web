@@ -5,6 +5,8 @@ const DIARY_WRITE_VIEW = 4;
 const DIARY_LIST_VIEW = 5;
 
 
+
+
 signUpWrap = '';
 signInWrap = '';
 writeWrap = '';

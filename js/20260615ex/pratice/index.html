@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
 
-    <script src="./js/viewChange.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/viewChange.js"></script>
+    <script src="./js/menuChange.js"></script>
     <script src="./js/db.js"></script>
-
+    <script src="./js/dumy.js"></script>
+    <script src="./js/session.js"></script>
+    <script src="./js/util.js"></script>
+ 
 </head>
 <body>
 
@@ -26,6 +30,7 @@
             <a class="sign-up" href="#none">Sign-up</a>
             <a class="sign-in" href="#none">Sign-in</a>
             <a class="sign-out" href="#none">Sign-out</a>
+            <a class="delete" href="#none">Delete</a>
             <a class="write" href="#none">Write</a>
             <a class="list" href="#none">List</a>
           </div>
@@ -65,3 +70,17 @@
     
 </body>
 </html>
+<!-- 브라우저가 즉시 렌더링하지 않는 HTML조각을 보관하는 컨테이너
+나중에 javaScript로 할 때 복제(clone)해서 DOM에 삽입 -->
+
+
+<template id = "list_item">
+      <div class="txt">
+
+      </div>
+</template>  
+
+
+
+
+
